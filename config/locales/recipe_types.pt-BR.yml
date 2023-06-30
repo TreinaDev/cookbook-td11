@@ -1,0 +1,13 @@
+---
+pt-BR:
+  activerecord:
+    models: 
+      one: Tipo de receita
+      other: Tipos de receitas
+    attributes:
+      recipe_type:
+        name: Nome
+  recipe_types:
+    create:
+      success:  'Tipo de receita cadastrada com sucesso'
+      error:  'Não foi possível cadastrar tipo de receita'

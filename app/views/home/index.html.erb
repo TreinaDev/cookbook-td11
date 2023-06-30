@@ -1,0 +1,38 @@
+<h1 class="text-center">
+  CookBook<br>
+  <small class="text-muted">De chefs para chefs</small>
+</h1>
+<section id="recipes">
+  <div class="d-flex flex-row">
+    <% @recipes.each do |recipe| %>
+      <div class="card my-5 mx-3 border-0 shadow-lg">
+        <div class="card-header">
+          <h3> <%= link_to recipe.title, recipe_path(recipe) %></h3>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Tipo: <%= recipe.recipe_type.name %></li>
+            <li>Tempo de preparo: <%= recipe.cook_time %> minutos</li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<aside>
+  <section id="recipe_types">
+  <h3 class="text-center">
+    Tipos de receitas
+  </h3>
+    <div class="d-flex flex-row">
+      <% @recipe_types.each do |recipe_type| %>
+        <div class="card my-5 mx-3 border-0 shadow-lg">
+          <div class="card-header">
+            <h4> <%= link_to recipe_type.name, recipe_type_path(recipe_type) %></h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </section>
+</aside>

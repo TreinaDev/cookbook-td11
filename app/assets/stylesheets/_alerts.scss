@@ -1,0 +1,78 @@
+.alert-notice {
+  @extend .alert-success
+}
+
+.alert-success {
+  background: linear-gradient($alert-success, $alert-success),
+              linear-gradient($white, $white);
+  color: $alert-text-color;
+  border-radius: 6px;
+  border: 0;
+  width: 100%;
+  .fa, .fas {
+    color: $fas-success-alert;
+  }
+}
+
+.alert-warning {
+  background-color: $alert-warning;
+  color: $alert-text-color;
+  border-radius: 6px;
+  border: 0;
+  width: 100%;
+  .fa, .fas {
+    color: $fas-warning-alert;
+  }
+  a {
+    font-family: 'ArchiaBold';
+    color: $alert-text-color;
+  }
+}
+
+.alert-danger {
+  background: linear-gradient($alert-danger, $alert-danger),
+              linear-gradient($white, $white);
+  color: $alert-text-color;
+  border-radius: 6px;
+  border: 0;
+  width: 100%;
+  .fa, .fas {
+    color: $fas-danger-alert;
+  }
+}
+
+.alert-strip-warning {
+  height: 4px;
+  width: 100%;
+  border-radius: 0.25rem;
+  border: 1px solid #EDEDED;
+  box-sizing: border-box;
+  background-color: $fas-warning-alert;
+}
+
+.alert-strip-light-warning {
+  height: 4px;
+  width: 100%;
+  border-radius: 0.25rem;
+  border: 1px solid #EDEDED;
+  box-sizing: border-box;
+  background-color: #DA8333;
+}
+
+.alert-strip-success {
+  height: 4px;
+  width: 100%;
+  border-radius: 0.25rem;
+  border: 1px solid #EDEDED;
+  box-sizing: border-box;
+  background-color: $fas-success-alert;
+}
+
+.alert-strip-danger {
+  height: 4px;
+  width: 100%;
+  border-radius: 0.25rem;
+  border: 1px solid #EDEDED;
+  box-sizing: border-box;
+  background-color: $fas-danger-alert;
+}

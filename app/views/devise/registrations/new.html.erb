@@ -1,0 +1,37 @@
+<div class="col d-flex justify-content-center">
+  <div class="card border-0 shadow mt-5" style="width: 18rem;">
+    <div class="card-header">
+      <h2>Cadastre-se</h2>
+    </div>
+    <div class="card-body">
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <%= f.label :email, class: "form-label" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control my-2" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, 'Senha', class: "form-label" %>
+          <% if @minimum_password_length %>
+          <em>(Deve possuir pelo menos <%= @minimum_password_length %> caracteres)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control my-2" %>
+        </div>
+
+        <div class="field mb-2">
+          <%= f.label :password_confirmation, 'Confirme sua senha', class: "form-label" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control my-2" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Cadastre-se", class:'btn btn-primary my-3' %>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

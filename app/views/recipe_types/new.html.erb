@@ -1,0 +1,17 @@
+<div class="mt-4 mb-2">
+  <h2 class="mb-5">Novo Tipo de Receita</h2>
+  <% if @recipe_type.errors.any? %>
+    <div class="alert alert-danger mt-2">
+      <%= t('errors.template.header', model: RecipeType.model_name.human, count: @recipe_type.errors.count) %>
+    </div>
+  <% end %>
+  <div class="card border-0 shadow-lg">
+    <div class="card-body">
+      <%= form_with model: @recipe_type do |f| %>
+        <%= f.label :name, "Nome", class: 'form-label' %>
+        <%= f.text_field :name, class: "form-control" %>
+        <%= f.submit "Salvar", class:'btn btn-primary my-3' %>
+      <% end %>
+    </div>
+  </div>
+</div>

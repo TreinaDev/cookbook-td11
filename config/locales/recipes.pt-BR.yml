@@ -1,0 +1,19 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      recipe:
+        one: Receita
+        other: Receitas
+    attributes:
+      recipe:
+        title: Título
+        cook_time: Tempo de preparo
+        ingredients: Ingredientes
+        instructions: Forma de preparo
+        recipe_type: Tipo de receita
+        recipe_type_id: Tipo de receita
+  recipes:
+    create:
+      success:  'Receita cadastrada com sucesso'
+      error:  'Não foi possível cadastrar receita'
