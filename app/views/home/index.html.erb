@@ -8,6 +8,10 @@
       <div class="card my-5 mx-3 border-0 shadow-lg">
         <div class="card-header">
           <h3> <%= link_to recipe.title, recipe_path(recipe) %></h3>
+          <% if FavoriteRecipe.where(user: current_user, recipe: recipe).exists? %>
+          <% else %>
+            <%= button_to "Favoritar #{recipe.title}", recipe_favorite_recipes_path(recipe.id) %>
+          <% end %>
         </div>
         <div class="card-body">
           <ul>

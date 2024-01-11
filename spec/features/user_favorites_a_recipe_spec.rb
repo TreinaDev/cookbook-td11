@@ -15,6 +15,6 @@ describe 'Usuário favorita receita' do
     click_on 'Favoritar Beijinho'
 
     expect(page).not_to have_content 'Favoritar Beijinho'
-    expect(page).to have_content 'Receita [Beijinho] favoritada com sucesso'
+    expect(page).to have_content 'Receita Beijinho favoritada com sucesso'
   end
 end
