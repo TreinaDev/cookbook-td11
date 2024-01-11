@@ -1,6 +1,9 @@
 <div class="card border-0 shadow-lg">
   <div class="card-header">
-    <h3 class="mt-2"><%= @recipe.title %> <%= link_to 'Editar', edit_recipe_path(@recipe), class: 'btn btn-primary' %></h3>
+    <h3 class="mt-2">
+      <%= @recipe.title %> <%= link_to 'Editar', edit_recipe_path(@recipe), class: 'btn btn-primary' %> 
+      <%= button_to 'Favoritar', amanha_path(@recipe), class: 'btn btn-primary' %>
+    </h3>
   </div>
   <div class="card-body">
     <p class="strong"> Criado por: <%= @recipe.user.email %> </p>
