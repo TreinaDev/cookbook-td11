@@ -1,0 +1,21 @@
+<div>
+  <% if @review.errors.any? %>
+    <% @review.errors.full_messages.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+  <h2>Deixe sua avaliação</h2>
+  <%= form_with model:@review, url: recipe_reviews_path(@recipe) do |f| %>
+    <div>
+      <%= f.label :text %>
+      <%= f.text_field :text %>
+    </div>
+    <div>
+      <%= f.label :grade %>
+      <%= f.number_field :grade %>
+    </div>
+    <div>
+      <%= f.submit 'Enviar Avaliação' %>
+    </div>
+  <% end %>
+</div>

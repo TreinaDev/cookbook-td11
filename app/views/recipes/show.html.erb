@@ -10,4 +10,20 @@
     <h4>Forma de preparo</h4>
     <p><%= @recipe.instructions%></p>
   </div>
+
+  <% if current_user %>
+    <% if Review.where(user: current_user, recipe: @recipe).empty? %>
+      <%= link_to 'Deixe sua avaliação', new_recipe_review_path(@recipe) %>
+    <% end %>
+  <% end %>
+
+  <div>
+    Avaliações
+
+    <% @recipe.reviews.each do |recipe_review| %>
+      Usuário: <%= recipe_review.user.email %>
+      Nota: <%= recipe_review.grade %>/5
+      Comentário: <%= recipe_review.text %>
+    <% end %>
+  </div>
 </div>

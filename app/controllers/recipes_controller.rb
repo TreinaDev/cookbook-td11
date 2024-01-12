@@ -18,7 +18,7 @@ class RecipesController < ApplicationController
 
     if @recipe.save
       flash[:notice] = t('.success')
-      return redirect_to(@recipe) 
+      return redirect_to(@recipe)
     end
     flash.now[:alert] = t('.error')
     render :new
