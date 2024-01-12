@@ -8,4 +8,8 @@ class FavoriteRecipesController < ApplicationController
       return redirect_to root_path, alert: 'Não foi possível favoritar a receita'
     end
   end
+
+  def index
+    @favorite_recipes = current_user.favorite_recipes
+  end
 end

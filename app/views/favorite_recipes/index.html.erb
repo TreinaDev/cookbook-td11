@@ -1,0 +1,8 @@
+
+<% if @favorite_recipes.exists? %>
+  <% @favorite_recipes.each do |favorite_recipe| %>
+    <%= favorite_recipe.recipe.title %>
+  <% end %>
+<% else %>
+  <h3>Nenhuma Receita Favoritada</h3>
+<% end %>

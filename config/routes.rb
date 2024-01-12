@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :recipes, only: %i[new create edit update show] do
     resources :favorite_recipes, only: %i[create]
   end
+
+  resources :favorite_recipes, only: %i[index]
 end
