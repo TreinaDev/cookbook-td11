@@ -1,7 +1,7 @@
 <div class="card border-0 shadow-lg">
   <div class="card-header">
     <h3 class="mt-2"><%= @recipe.title %> <%= link_to 'Editar', edit_recipe_path(@recipe), class: 'btn btn-primary' %></h3>
-  </div>
+    <%= link_to 'Comentar', new_recipe_comment_path(@recipe), class: 'btn btn-primary' %></h3>
   <div class="card-body">
     <p class="strong"> Criado por: <%= @recipe.user.email %> </p>
     <p class="strong"> Tipo de Receita: <%= @recipe.recipe_type.name %> </p>
@@ -9,5 +9,16 @@
     <p class="strong"> Ingredientes: <%= @recipe.ingredients %> </p>
     <h4>Forma de preparo</h4>
     <p><%= @recipe.instructions%></p>
+    <% if @recipe.comments.any? %>
+      <h4>Comentários</h4>
+      <ul>
+        <% @recipe.comments.each do |comment| %>
+          <li><%= comment.text %></li>
+          <% if comment.image.attached? %>
+            <li><%= image_tag comment.image, width: '300' %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+      </ul>
   </div>
 </div>
