@@ -1,0 +1,15 @@
+
+<% if @comment.errors.any? %>
+    <ul>
+      <% @comment.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+<%= form_with model: [@recipe, @comment] do |form| %>
+  <%= form.label :text %>
+  <%= form.text_area :text %>
+
+  <%= form.submit 'Enviar' %>
+<% end %>

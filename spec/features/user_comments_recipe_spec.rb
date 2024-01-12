@@ -18,4 +18,27 @@ feature 'Usuário comenta receita' do
     expect(page).to have_content 'Comentários'
     expect(page).to have_content 'Gostei'
   end
+
+  scenario 'e precisa estar logado' do
+    recipe = create(:recipe)
+
+    visit recipe_path(recipe)
+    click_on 'Comentar'
+
+    expect(page).to have_current_path(new_user_session_path)
+  end
+
+  scenario 'e não pode ser comentário vazio' do
+    user = create(:user)
+    recipe = create(:recipe)
+
+    login_as user, scope: :user
+    visit recipe_path(recipe)
+    click_on 'Comentar'
+    fill_in 'Comentário', with: ''
+    click_on 'Enviar'
+
+    expect(page).to have_content 'Comentário não pode ficar em branco'
+    expect(recipe.comments.count).to eq 0
+  end
 end

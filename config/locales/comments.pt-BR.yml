@@ -1,0 +1,16 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      comment:
+        one: Cometário
+        other: Comentários
+    attributes:
+      comment:
+        text: Comentário
+        recipe: Receita
+        recipe_id: Receita
+  comments:
+    create:
+      success:  'Comentário enviado com sucesso'
+      error:  'Não foi possível enviar o comentário'
