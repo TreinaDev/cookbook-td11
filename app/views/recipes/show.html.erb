@@ -14,6 +14,9 @@
       <ul>
         <% @recipe.comments.each do |comment| %>
           <li><%= comment.text %></li>
+          <% if comment.image.attached? %>
+            <li><%= image_tag comment.image, width: '300' %></li>
+          <% end %>
         <% end %>
       <% end %>
       </ul>

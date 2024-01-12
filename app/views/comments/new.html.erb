@@ -11,5 +11,8 @@
   <%= form.label :text %>
   <%= form.text_area :text %>
 
+  <%= form.label :image, 'Imagem' %>
+  <%= form.file_field :image, accept: 'image/png,image/jpeg' %>
+
   <%= form.submit 'Enviar' %>
 <% end %>
