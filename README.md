@@ -50,3 +50,5 @@ Para conhecer mais sobre este comando, leia seu código fonte na pasta `bin` do 
 6. Acesse `localhost:3000` em seu navegador de preferência e veja se está tudo ok.
 
 7. Para rodar os testes, execute `rspec`.
+
+Iniciando colaboração
