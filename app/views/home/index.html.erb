@@ -40,3 +40,22 @@
     </div>
   </section>
 </aside>
+
+<% if user_signed_in? && current_user %>
+  <aside>
+    <section id="favorite_recipes">
+    <h3 class="text-center">
+      Últimas Receitas Favoritadas
+    </h3>
+      <div class="d-flex flex-row">
+        <% @favorite_recipes.each do |favorite_recipe| %>
+          <div class="card my-5 mx-3 border-0 shadow-lg">
+            <div class="card-header">
+              <h4> <%= link_to favorite_recipe.recipe.title, favorite_recipe.recipe %></h4>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  </aside>
+<% end %>
